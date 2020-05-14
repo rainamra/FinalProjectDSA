@@ -48,7 +48,7 @@ void addPatients(string name,int age)
 void removePatients(string name)
 {
 
-    map_data.erase(map_data.begin(),map_data.find(name));
+    map_data.erase(name);
     
      //Code to View Patient
     for (itr = map_data.begin(); itr != map_data.end(); ++itr)
