@@ -1,5 +1,7 @@
 #include <iostream>
 #include "header.h"
+#include <map>
+#include <iterator>
 
 using namespace std;
 
@@ -36,31 +38,64 @@ CLI PLAN:
 
 int main()
 {
-    cout << "nCovid-19 Data System" <<endl;
-    cout << "----------------------" << endl;
-    cout << "1. Add Patient" << endl;
-    cout << "2. Remove Patient" << endl;
-    cout << "3. View Patients" << endl;
-    cout << "4. Exit" << endl;
 
-    cout << "Selection: ";
-    int selection;
-    cin >> selection;
-
-    switch(selection)
+    
+    bool start = true;
+    while(start)
     {
-        case 1:
+        cout << "nCovid-19 Data System" <<endl;
+        cout << "----------------------" << endl;
+        cout << "1. Add Patient" << endl;
+        cout << "2. Remove Patient" << endl;
+        cout << "3. View Patients" << endl;
+        cout << "4. Exit" << endl;
+        cout << "----------------------" << endl;
 
-        case 2:
+        cout << "Selection: ";
+        int selection;
+        cin >> selection;
 
-        case 3:
+        switch(selection)
+        {
+            case 1:
+                {
+                    string patientName;
+                    int patientAge;
 
-        case 4:
+                    cout << "Enter Patient Name: ";
+                    cin >> patientName;
+                    cout << "Enter Patient Age: ";
+                    cin >> patientAge;
 
-        default:
-            cout << "Selection does not exist" << endl;
+                    addPatients(patientName,patientAge);
+                    break;
+                }
+
+            case 2:
+                {
+                    string findPatientName;
+
+                    cout << "Enter Patient to remove: ";
+                    cin >> findPatientName;
+
+                    removePatients(findPatientName);
+                    break;
+
+
+                }
+            case 3:
+                viewPatients();
+                break;
+            case 4:
+                start = false;
+                break;
+
+            default:
+                cout << "Selection does not exist" << endl;
+        }
+
     }
-
+    
 
 
 

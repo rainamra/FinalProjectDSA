@@ -24,11 +24,51 @@ the system will also be able to sort / filter through the data
 #include <map>
 #include <list>
 #include <iterator>
+#include <string>
 
 using namespace std;
 
-multimap<string,list<string>> data;
+map<string,int> map_data;
+map<string,int>::iterator itr;
 
+
+
+void addPatients(string name,int age)
+{
+
+    map_data.insert(pair<string,int>(name,age));
+     //Code to View Patient
+    for (itr = map_data.begin(); itr != map_data.end(); ++itr)
+    {
+        cout << '\t' << itr->first << '\t' << itr->second << '\n';
+    }
+
+}
+
+void removePatients(string name)
+{
+
+    map_data.erase(map_data.begin(),map_data.find(name));
+    
+     //Code to View Patient
+    for (itr = map_data.begin(); itr != map_data.end(); ++itr)
+    {
+        cout << '\t' << itr->first << '\t' << itr->second << '\n';
+    }
+
+}
+
+
+
+void viewPatients()
+{
+    //Code to View Patient
+    for (itr = map_data.begin(); itr != map_data.end(); ++itr)
+    {
+        cout << '\t' << itr->first << '\t' << itr->second << '\n';
+    }
+
+}
 
 
 
