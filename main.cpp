@@ -75,7 +75,16 @@ int main()
                     cout << "Enter Patient to remove: ";
                     cin >> findPatientName;
 
-                    removePatients(findPatientName);
+                    if(findKey(findPatientName) == true)
+                    {
+                        removePatients(findPatientName);
+                    }
+
+                    else
+                    {
+                        cout << "No Patients Found!" << endl;
+                    }
+                    
                     break;
 
 

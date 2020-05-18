@@ -31,6 +31,8 @@ using namespace std;
 map<string,int> map_data;
 map<string,int>::iterator itr;
 
+map<string,int>::iterator findItr;
+
 
 
 void addPatients(string name,int age)
@@ -50,11 +52,7 @@ void removePatients(string name)
 
     map_data.erase(name);
     
-     //Code to View Patient
-    for (itr = map_data.begin(); itr != map_data.end(); ++itr)
-    {
-        cout << '\t' << itr->first << '\t' << itr->second << '\n';
-    }
+    cout << "Patient " << name << " has been discharged!" << endl;
 
 }
 
@@ -67,6 +65,24 @@ void viewPatients()
     {
         cout << '\t' << itr->first << '\t' << itr->second << '\n';
     }
+
+}
+
+bool findKey(string name)
+{
+    
+    findItr = map_data.find(name);
+
+    if (findItr == map_data.end())
+    {
+        return false;
+    }
+
+    else
+    {
+        return true;
+    }
+    
 
 }
 
