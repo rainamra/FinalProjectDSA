@@ -1,8 +1,10 @@
 DATA STRUCTURE ALGORITHM FINAL PROJECT
 -----------------------------------------------------
-Radisa Hussein Rachmadi - 2301891752
-Rainamira Azzahra - 
-Rayhan Ali Darmawan - 
+- Radisa Hussein Rachmadi - 2301891752
+
+- Rainamira Azzahra - 
+
+- Rayhan Ali Darmawan -
 -----------------------------------------------------
 
 Create a system to store Covid-19 Patients for better efficient analyzing
