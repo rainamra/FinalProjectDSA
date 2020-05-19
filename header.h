@@ -39,11 +39,9 @@ void addPatients(string name,int age)
 {
 
     map_data.insert(pair<string,int>(name,age));
-     //Code to View Patient
-    for (itr = map_data.begin(); itr != map_data.end(); ++itr)
-    {
-        cout << '\t' << itr->first << '\t' << itr->second << '\n';
-    }
+    cout << "----------------------" << endl;
+    cout << "Patient successfully added to database!" << endl;
+
 
 }
 
@@ -61,9 +59,11 @@ void removePatients(string name)
 void viewPatients()
 {
     //Code to View Patient
+    cout << "Name" << '\t' << "Age\n" << endl;
+
     for (itr = map_data.begin(); itr != map_data.end(); ++itr)
     {
-        cout << '\t' << itr->first << '\t' << itr->second << '\n';
+        cout << itr->first << '\t' << itr->second << '\n';
     }
 
 }

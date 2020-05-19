@@ -40,6 +40,7 @@ int main()
     bool start = true;
     while(start)
     {
+        cout << "----------------------" << endl;
         cout << "nCovid-19 Data System" <<endl;
         cout << "----------------------" << endl;
         cout << "1. Add Patient" << endl;
@@ -51,6 +52,8 @@ int main()
         cout << "Selection: ";
         int selection;
         cin >> selection;
+        cout << "----------------------" << endl;
+
 
         switch(selection)
         {
@@ -86,6 +89,7 @@ int main()
                     }
                     
                     break;
+
 
 
                 }
