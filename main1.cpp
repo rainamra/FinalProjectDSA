@@ -83,6 +83,7 @@ int main()
             case 3:
                 {
                     viewPatients();
+                    break;
                 }
 
             case 4:
@@ -93,6 +94,7 @@ int main()
 
             default:
                 cout << "Selection does not exist" << endl;
+                break;
         }
 
     }

@@ -1,1 +1,7 @@
+Ali,19,Bintaro
 Cen,18,Kemang
+Raina,19,Rawamangun
+Azelline,19,Rawamangun
+Cimeng,19,Depok
+Gardyan,19,Simprug
+Catherine,20,Semarang
