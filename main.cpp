@@ -95,6 +95,7 @@ int main()
                 }
             case 3:
                 viewPatients();
+                selectSort();
                 break;
             case 4:
                 start = false;

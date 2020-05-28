@@ -59,19 +59,21 @@ int main()
         {
             case 1:
                 {
-                    string patientName;
+                    string patientName,location,date;
                     int patientAge;
-                    string location;
 
 
                     cout << "Enter Patient Name: ";
                     cin >> patientName;
                     cout << "Enter Patient Age: ";
                     cin >> patientAge;
+                    cout << "Enter date (dd/mm/yyy): ";
+                    cin >> date;
                     cout << "Enter Location: ";
                     cin >> location;
+  
 
-                    addPatients(patientName,patientAge,location);
+                    addPatients(patientName,patientAge,date,location);
                     break;
                 }
 
@@ -83,7 +85,10 @@ int main()
             case 3:
                 {
                     viewPatients();
+                    selectSort();
                     break;
+                    
+                    
                 }
 
             case 4:

@@ -1,7 +1,2 @@
-Ali,19,Bintaro
-Cen,18,Kemang
-Raina,19,Rawamangun
-Azelline,19,Rawamangun
-Cimeng,19,Depok
-Gardyan,19,Simprug
-Catherine,20,Semarang
+Ali,20,04/04/2020,Bintaro
+Cem,19,02/04/2020,Kemang
