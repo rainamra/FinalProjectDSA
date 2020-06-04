@@ -434,18 +434,16 @@ void ageSort()
 {
 
     vector<Patients> patients;
-    string line;
-    int numOfLines;
+    string lines;
+    int numOfLines = 0;
     ifstream datafile("data.txt");
 
-    while (getline(datafile,line))
+    while (getline(datafile,lines))
     {
-        ++numOfLines;
+        numOfLines++;
     }
 
     cout << numOfLines << endl;
-
-
 
 }
 
@@ -466,14 +464,17 @@ void selectSort()
         case 1:
             {
                 nameSort();
+                break;
             }
         case 2:
             {
                 ageSort();
+                break;
             }
         case 3:
             {
                 dateSort();
+                break;
             }
 
         case 4:
