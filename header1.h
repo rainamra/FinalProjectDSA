@@ -16,211 +16,204 @@ class Patients
     private:
         string name,date,location;
         int age;
+        string fever, tiredness, headache, conjunctivitis, diarrhea, achesPains, soreThroat, dryCough, lossTasteSmell, skinProbs, breathingProbs, chestPainPressure, lossSpeechMovement;
 
     public:
         Patients(){}
 
-        Patients(string name, int age, string date, string location, string fever, string tiredness, string headache, string conjunctivitis, string diarrhea, string achesPains, string soreThroat, string dryCough, 
-        string lossTasteSmell, string skinProbs, string breathingProbs, string chestPainPressure, string lossSpeechMovement)
+        Patients(string Name, int Age, string Date, string Location, string Fever, string Tiredness, string Headache, string Conjunctivitis, string Diarrhea, string AchesPains, string SoreThroat, string DryCough, 
+        string LossTasteSmell, string SkinProbs, string BreathingProbs, string ChestPainPressure, string LossSpeechMovement)
         {
-            this.name = name;
-            this.age = age;
-            this.date = date;
-            this.location = location;
-            this.fever = fever;
-            this.tiredness = tiredness;
-            this.headache = headache;
-            this.conjunctivitis = conjunctivitis;
-            this.diarrhea = diarrhea;
-            this.achesPains = achesPains;
-            this.soreThroat = soreThroat;
-            this.dryCough = dryCough;
-            this.lossTasteSmell = lossTasteSmell;
-            this.skinProbs = skinProbs;
-            this.breathingProbs = breathingProbs;
-            this.chestPainPressure = chestPainPressure;
-            this.lossSpeechMovement = lossSpeechMovement;
+            name = Name;
+            age = Age;
+            date = Date;
+            location = Location;
+
+            //symptoms
+            fever = Fever;
+            tiredness = Tiredness;
+            headache = Headache;
+            conjunctivitis = Conjunctivitis;
+            diarrhea = Diarrhea;
+            achesPains = AchesPains;
+            soreThroat = SoreThroat;
+            dryCough = DryCough;
+            lossTasteSmell = LossTasteSmell;
+            skinProbs = SkinProbs;
+            breathingProbs = BreathingProbs;
+            chestPainPressure = ChestPainPressure;
+            lossSpeechMovement = LossSpeechMovement;
             
         }
 
-        void setName(string name)
+        void setName(string Name)
         {
-            this.name = name;
+            name = Name;
         }
 
         string getName()
         {
-            return this.name;
+            return name;
         }
 
-        void setAge(int age)
+        void setAge(int Age)
         {
-            this.age = age;
+            age = Age;
         }
 
         int getAge()
         {
-            return this.age;
+            return age;
         }
         
-        void setDate(string date)
+        void setDate(string Date)
         {
-            this.date = date;
+            date = Date;
         }
 
         string getDate()
         {
-            return this.date;
+            return date;
         }
 
-        void setLocation(string location)
+        void setLocation(string Location)
         {
-            this.location = location;
+            location = Location;
         }
 
         string getLocation()
         {
-            return this.location;
+            return location;
         }
 
-        void setFever(string fever)
+        void setFever(string Fever)
         {
-            this.fever = fever;
+            fever = Fever;
         }
 
         string getFever()
         {
-            return this.fever;
+            return fever;
         }
 
-        void setTiredness(string tiredness)
+        void setTiredness(string Tiredness)
         {
-            this.tiredness = tiredness;
+            tiredness = Tiredness;
         }
 
         string getiredness()
         {
-            return this.tiredness;
+            return tiredness;
         }
 
-        void setConjunctivitis(string conjunctivitis)
+        void setConjunctivitis(string Conjunctivitis)
         {
-            this.conjunctivitis = conjunctivitis;
+            conjunctivitis = Conjunctivitis;
         }
 
         string getConjunctivitis()
         {
-            return this.conjunctivitis;
+            return conjunctivitis;
         }
 
-        void setLocation(string)
+        void setHeadache(string Headache)
         {
-            this.location = location;
-        }
-
-        string getLocation()
-        {
-            return this.location;
-        }
-
-        void setHeadache(string headache)
-        {
-            this.headache = headache;
+            headache = Headache;
         }
 
         string getHeadache()
         {
-            return this.headache;
+            return headache;
         }
 
-        void setDiarrhea(string diarrhea)
+        void setDiarrhea(string Diarrhea)
         {
-            this.diarrhea = diarrhea;
+            diarrhea = Diarrhea;
         }
 
         string getDiarrhea()
         {
-            return this.diarrhea;
+            return diarrhea;
         }
 
-        void setAchesPains(string achesPains)
+        void setAchesPains(string AchesPains)
         {
-            this.achesPains = achesPains;
+            achesPains = AchesPains;
         }
 
         string getAchesPains()
         {
-            return this.achesPains;
+            return achesPains;
         }
 
-        void setSoreThroat(string achesPains)
+        void setSoreThroat(string SoreThroat)
         {
-            this.soreThroat = soreThroat;
+            soreThroat = SoreThroat;
         }
 
         string getSoreThroat()
         {
-            return this.soreThroat;
+            return soreThroat;
         }
 
-        void setDryCough(string dryCough)
+        void setDryCough(string DryCough)
         {
-            this.dryCough = dryCough;
+            dryCough = DryCough;
         }
 
         string getDryCough()
         {
-            return this.dryCough;
+            return dryCough;
         }
 
-        void setLossTasteSmell(string lossTasteSmell)
+        void setLossTasteSmell(string LossTasteSmell)
         {
-            this.lossTasteSmell = lossTasteSmell;
+            lossTasteSmell = LossTasteSmell;
         }
 
         string getLossTasteSmell()
         {
-            return this.lossTasteSmell;
+            return lossTasteSmell;
         }
 
-        void setSkinProbs(string skinProbs)
+        void setSkinProbs(string SkinProbs)
         {
-            this.skinProbs = skinProbs;
+            skinProbs = SkinProbs;
         }
 
         string getSkinProbs()
         {
-            return this.skinProbs;
+            return skinProbs;
         }
 
-        void setBreathingProbs(string breathingProbs)
+        void setBreathingProbs(string BreathingProbs)
         {
-            this.breathingProbs = breathingProbs;
+            breathingProbs = BreathingProbs;
         }
 
         string getBreathingProbs()
         {
-            return this.breathingProbs;
+            return breathingProbs;
         }
 
-        void setAchestPainPressure(string achestPainPressure)
+        void setChestPainPressure(string ChestPainPressure)
         {
-            this.achestPainPressure = achestPainPressure;
+            chestPainPressure = ChestPainPressure;
         }
 
-        string getAchestPainPressure()
+        string getChestPainPressure()
         {
-            return this.achestPainPressure;
+            return chestPainPressure;
         }
 
-        void setLossSpeechMovement(string lossSpeechMovement)
+        void setLossSpeechMovement(string LossSpeechMovement)
         {
-            this.lossSpeechMovement = lossSpeechMovement;
+            lossSpeechMovement = LossSpeechMovement;
         }
 
         string getLossSpeechMovement()
         {
-            return this.lossSpeechMovement;
+            return lossSpeechMovement;
         }
         
 
@@ -229,7 +222,8 @@ class Patients
 
 
 
-void addPatients(string name,int age, string date, string location)
+void addPatients(string name,int age, string date, string location, string Fever, string Tiredness, string Headache, string Conjunctivitis, string Diarrhea, string AchesPains, string SoreThroat, string DryCough, 
+        string LossTasteSmell, string SkinProbs, string BreathingProbs, string ChestPainPressure, string LossSpeechMovement)
 {
     
     ofstream foutput;
@@ -259,7 +253,7 @@ void addPatients(string name,int age, string date, string location)
 
         if(finput.is_open())
         {
-            foutput << name << "," << age << "," << date << "," << location << "\n";
+            foutput << "\n" << name << "," << age << "," << date << "," << location;
         }
 
         finput.close();
@@ -421,23 +415,37 @@ void dateSort()
 void nameSort()
 {
     
-    vector<Patients> patients;
-    
-    ifstream datafile("data.txt");
+    // vector<Patients> patients;
 
-    for(i = 0; i <= )
+    // ifstream datafile("data.txt");
 
-    temp = Patients("0",0,"0","0");
-    patients.push_back(temp);
-    temp.setName(name);
-    temp.setAge(age);
-    temp.setDate(date);
-    temp.setLocation(location);
+    // for(i = 0; i <= )
+
+    // temp = Patients("0",0,"0","0");
+    // patients.push_back(temp);
+    // temp.setName(name);
+    // temp.setAge(age);
+    // temp.setDate(date);
+    // temp.setLocation(location);
 
 }
 
 void ageSort()
 {
+
+    vector<Patients> patients;
+    string line;
+    int numOfLines;
+    ifstream datafile("data.txt");
+
+    while (getline(datafile,line))
+    {
+        ++numOfLines;
+    }
+
+    cout << numOfLines << endl;
+
+
 
 }
 
