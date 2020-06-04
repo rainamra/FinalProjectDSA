@@ -64,20 +64,55 @@ int main()
             case 1:
                 {
                     string patientName,location,date;
+                    string fever, tiredness, headache, conjunctivitis, diarrhea, achesPains, soreThroat, dryCough, 
+                    lossTasteSmell, skinProbs, breathingProbs, chestPainPressure, lossSpeechMovement;
                     int patientAge;
 
 
                     cout << "Enter Patient Name: ";
                     cin >> patientName;
+
                     cout << "Enter Patient Age: ";
                     cin >> patientAge;
+
                     cout << "Enter date (dd/mm/yyy): ";
                     cin >> date;
+
                     cout << "Enter Location: ";
                     cin >> location;
+
+                    cout << "Symptoms Check: ";
+                    cout << "Fever (Y/N): ";
+                    cin >> fever;
+                    cout << "Tiredness (Y/N): ";
+                    cin >> tiredness;
+                    cout << "Headache (Y/N): ";
+                    cin >> headache;
+                    cout << "Conjunctivitis (Y/N): ";
+                    cin >> conjunctivitis;
+                    cout << "Diarrhoea (Y/N): ";
+                    cin >> diarrhea;
+                    cout << "Aches and Pains (Y/N): ";
+                    cin >> achesPains;
+                    cout << "Sore Throat (Y/N): ";
+                    cin >> soreThroat;
+                    cout << "Dry Cough (Y/N): ";
+                    cin >> dryCough;
+                    cout << "Loss of Taste or Smell (Y/N): ";
+                    cin >> lossTasteSmell;
+                    cout << "Rash on Skin or Discolouration of Fingers or Toes (Y/N): ";
+                    cin >> skinProbs;
+                    cout << "Difficulty Breathing or Shortness of Breath (Y/N): ";
+                    cin >> breathingProbs;
+                    cout << "Chest Pain or Pressure (Y/N): ";
+                    cin >> chestPainPressure;
+                    cout << "Loss of Speech or Movement (Y/N): ";
+                    cin >> lossSpeechMovement;
+                    
   
 
-                    addPatients(patientName,patientAge,date,location);
+                    addPatients(patientName,patientAge,date,location, fever, tiredness, headache, conjunctivitis, diarrhea, achesPains, soreThroat, dryCough, 
+                    lossTasteSmell, skinProbs, breathingProbs, chestPainPressure, lossSpeechMovement);
                     break;
                 }
 
