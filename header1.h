@@ -20,12 +20,27 @@ class Patients
     public:
         Patients(){}
 
-        Patients(string name, int age, string date, string location)
+        Patients(string name, int age, string date, string location, string fever, string tiredness, string headache, string conjunctivitis, string diarrhea, string achesPains, string soreThroat, string dryCough, 
+        string lossTasteSmell, string skinProbs, string breathingProbs, string chestPainPressure, string lossSpeechMovement)
         {
             this.name = name;
             this.age = age;
             this.date = date;
             this.location = location;
+            this.fever = fever;
+            this.tiredness = tiredness;
+            this.headache = headache;
+            this.conjunctivitis = conjunctivitis;
+            this.diarrhea = diarrhea;
+            this.achesPains = achesPains;
+            this.soreThroat = soreThroat;
+            this.dryCough = dryCough;
+            this.lossTasteSmell = lossTasteSmell;
+            this.skinProbs = skinProbs;
+            this.breathingProbs = breathingProbs;
+            this.chestPainPressure = chestPainPressure;
+            this.lossSpeechMovement = lossSpeechMovement;
+            
         }
 
         void setName(string name)
@@ -58,6 +73,46 @@ class Patients
             return this.date;
         }
 
+        void setLocation(string location)
+        {
+            this.location = location;
+        }
+
+        string getLocation()
+        {
+            return this.location;
+        }
+
+        void setFever(string fever)
+        {
+            this.fever = fever;
+        }
+
+        string getFever()
+        {
+            return this.fever;
+        }
+
+        void setTiredness(string tiredness)
+        {
+            this.tiredness = tiredness;
+        }
+
+        string getiredness()
+        {
+            return this.tiredness;
+        }
+
+        void setConjunctivitis(string conjunctivitis)
+        {
+            this.conjunctivitis = conjunctivitis;
+        }
+
+        string getConjunctivitis()
+        {
+            return this.conjunctivitis;
+        }
+
         void setLocation(string)
         {
             this.location = location;
@@ -67,6 +122,107 @@ class Patients
         {
             return this.location;
         }
+
+        void setHeadache(string headache)
+        {
+            this.headache = headache;
+        }
+
+        string getHeadache()
+        {
+            return this.headache;
+        }
+
+        void setDiarrhea(string diarrhea)
+        {
+            this.diarrhea = diarrhea;
+        }
+
+        string getDiarrhea()
+        {
+            return this.diarrhea;
+        }
+
+        void setAchesPains(string achesPains)
+        {
+            this.achesPains = achesPains;
+        }
+
+        string getAchesPains()
+        {
+            return this.achesPains;
+        }
+
+        void setSoreThroat(string achesPains)
+        {
+            this.soreThroat = soreThroat;
+        }
+
+        string getSoreThroat()
+        {
+            return this.soreThroat;
+        }
+
+        void setDryCough(string dryCough)
+        {
+            this.dryCough = dryCough;
+        }
+
+        string getDryCough()
+        {
+            return this.dryCough;
+        }
+
+        void setLossTasteSmell(string lossTasteSmell)
+        {
+            this.lossTasteSmell = lossTasteSmell;
+        }
+
+        string getLossTasteSmell()
+        {
+            return this.lossTasteSmell;
+        }
+
+        void setSkinProbs(string skinProbs)
+        {
+            this.skinProbs = skinProbs;
+        }
+
+        string getSkinProbs()
+        {
+            return this.skinProbs;
+        }
+
+        void setBreathingProbs(string breathingProbs)
+        {
+            this.breathingProbs = breathingProbs;
+        }
+
+        string getBreathingProbs()
+        {
+            return this.breathingProbs;
+        }
+
+        void setAchestPainPressure(string achestPainPressure)
+        {
+            this.achestPainPressure = achestPainPressure;
+        }
+
+        string getAchestPainPressure()
+        {
+            return this.achestPainPressure;
+        }
+
+        void setLossSpeechMovement(string lossSpeechMovement)
+        {
+            this.lossSpeechMovement = lossSpeechMovement;
+        }
+
+        string getLossSpeechMovement()
+        {
+            return this.lossSpeechMovement;
+        }
+        
 
 };
 
