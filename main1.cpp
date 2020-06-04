@@ -35,8 +35,12 @@ CLI PLAN:
 
 int main()
 {
+    //Create object patient for all patients in file when loaded
+    vector<Patients> patients;
+    ifstream datafile("data.txt");
+    int i = 0;
 
-    
+
     bool start = true;
     while(start)
     {

@@ -4,16 +4,81 @@
 #include <sstream>
 #include <list>
 #include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 // MAIN FUNCTIONS ---------------------------------------------------------
 
+
+//PATIENT CLASS
+class Patients
+{
+    private:
+        string name,date,location;
+        int age;
+
+    public:
+        Patients(){}
+
+        Patients(string name, int age, string date, string location)
+        {
+            this.name = name;
+            this.age = age;
+            this.date = date;
+            this.location = location;
+        }
+
+        void setName(string name)
+        {
+            this.name = name;
+        }
+
+        string getName()
+        {
+            return this.name;
+        }
+
+        void setAge(int age)
+        {
+            this.age = age;
+        }
+
+        int getAge()
+        {
+            return this.age;
+        }
+        
+        void setDate(string date)
+        {
+            this.date = date;
+        }
+
+        string getDate()
+        {
+            return this.date;
+        }
+
+        void setLocation(string)
+        {
+            this.location = location;
+        }
+
+        string getLocation()
+        {
+            return this.location;
+        }
+
+};
+
+
+
+
 void addPatients(string name,int age, string date, string location)
 {
-
+    
     ofstream foutput;
     ifstream finput;
-
+ 
     finput.open("data.txt");
 
     if ( finput.peek() == std::ifstream::traits_type::eof() ) //if file is empty
@@ -28,6 +93,7 @@ void addPatients(string name,int age, string date, string location)
 
         finput.close();
         foutput.close();
+
     }
 
     else //if theres already data in file
@@ -103,29 +169,6 @@ void viewPatients()
 
 // SORTING -----------------------------------------------
 
-void selectSort()
-{
-    int selectSort;
-    //Sorting Menu
-    cout << "----------------------" << endl;
-    cout << "Sorting Options: " << endl;
-    cout << "1. Name\n" << "2. Age\n" << "3. Date\n" << "4. Location\n" << "5. Back" << endl;
-    cout << "----------------------" << endl;
-    cout << "Selection: ";
-    cin >> selectSort;
-
-    switch(selectSort)
-    {
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-            {
-                break;
-            }
-    }
-}
 
 //DATE SORTING
 bool compare(string a, string b) // compare fuction to sort array of dates
@@ -148,11 +191,16 @@ bool compare(string a, string b) // compare fuction to sort array of dates
     string month_a = a.substr(3,2);
     string month_b = b.substr(3,2);
 
-    if(month_a.compare(month_b) < 0)
-    {
-        return true;
+      if(month_a.compare(month_b) != 0)
+    {   
+        if(month_a.compare(month_b) < 0)
+        {
+            return true;
+        }
+        return false; 
     }
-    return false;
+    
+    
     
     
 
@@ -169,3 +217,89 @@ bool compare(string a, string b) // compare fuction to sort array of dates
 
 
 
+void printDates(vector<string> dates, int n) 
+{ 
+    for (int i = 0; i < n; i++) { 
+        cout << dates[i] << endl; 
+    } 
+} 
+
+void dateSort()
+{
+
+    string line;
+
+    string name,ageStr,date,place;
+    int age;
+
+    ifstream datafile("data.txt");
+
+    vector<string> dates;
+
+    while (getline(datafile,line))
+    {
+        stringstream ss(line);
+
+        getline(ss,name,',');
+        getline(ss,ageStr,','); //age stored into string
+        age = stoi(ageStr); //Stoi = casting variable, converting to int
+        getline(ss,date,',');
+        getline(ss,place,',');
+
+        dates.push_back(date);
+
+    }
+
+    int n = dates.size();
+    
+    sort(dates.begin() , dates.end(), compare);
+
+    printDates(dates,n);
+
+
+    
+
+}
+
+
+void nameSort(){}
+
+void ageSort()
+{
+    
+}
+
+
+void selectSort()
+{
+    int selectSort;
+    //Sorting Menu
+    cout << "----------------------" << endl;
+    cout << "Sorting Options: " << endl;
+    cout << "1. Name\n" << "2. Age\n" << "3. Date\n" << "4. Location\n" << "5. Back" << endl;
+    cout << "----------------------" << endl;
+    cout << "Selection: ";
+    cin >> selectSort;
+
+    switch(selectSort)
+    {
+        case 1:
+            {
+                nameSort();
+            }
+        case 2:
+            {
+                ageSort();
+            }
+        case 3:
+            {
+                dateSort();
+            }
+
+        case 4:
+        case 5:
+            {
+                break;
+            }
+    }
+}

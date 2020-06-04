@@ -23,11 +23,16 @@ bool compare(string a, string b) // compare fuction to sort array of dates
     string month_a = a.substr(3,2);
     string month_b = b.substr(3,2);
 
-    if(month_a.compare(month_b) < 0)
-    {
-        return true;
+    if(month_a.compare(month_b) != 0)
+    {   
+        if(month_a.compare(month_b) < 0)
+        {
+            return true;
+        }
+        return false;
+        
     }
-    return false;
+    
     
     
 
@@ -42,7 +47,7 @@ bool compare(string a, string b) // compare fuction to sort array of dates
     return false;
 }
 
-void printDates(string dates[], int n) 
+void printDates(vector<string> dates, int n) 
 { 
     for (int i = 0; i < n; i++) { 
         cout << dates[i] << endl; 
@@ -52,14 +57,20 @@ void printDates(string dates[], int n)
 int main()
 {
 
-    string dates[] = {"24/06/2020","10/01/2020","30/04/2020","15/05/2020"};
 
-    int n = sizeof(dates) / sizeof(dates[0]);
-    
-    sort(dates , dates+n, compare);
+    vector<string> date;
+    date.push_back("24/06/2020");
+    date.push_back("10/01/2020");
+    date.push_back("30/04/2020");
+    date.push_back("28/04/2020");
+    date.push_back("01/01/2020");
 
-    printDates(dates , n);
 
+    int m = date.size();
+
+    sort(date.begin() , date.end(), compare);
+
+    printDates(date , m);
 
 
 }
