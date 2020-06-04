@@ -262,11 +262,27 @@ void dateSort()
 }
 
 
-void nameSort(){}
+void nameSort()
+{
+    
+    vector<Patients> patients;
+    
+    ifstream datafile("data.txt");
+
+    for(i = 0; i <= )
+
+    temp = Patients("0",0,"0","0");
+    patients.push_back(temp);
+    temp.setName(name);
+    temp.setAge(age);
+    temp.setDate(date);
+    temp.setLocation(location);
+
+}
 
 void ageSort()
 {
-    
+
 }
 
 
