@@ -101,7 +101,7 @@ class Patients
             tiredness = Tiredness;
         }
 
-        string getiredness()
+        string getTiredness()
         {
             return tiredness;
         }
@@ -238,7 +238,7 @@ void addPatients(string name,int age, string date, string location, string Fever
 
         if(finput.is_open())
         {
-            foutput << name << "," << age << "," << date << "," << location << "\n";
+            foutput << name << "," << age << "," << date << "," << location << "," << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "," << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "," << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement;
         }
 
         finput.close();
@@ -253,7 +253,7 @@ void addPatients(string name,int age, string date, string location, string Fever
 
         if(finput.is_open())
         {
-            foutput << "\n" << name << "," << age << "," << date << "," << location;
+            foutput << "\n" << name << "," << age << "," << date << "," << location << "," << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "," << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "," << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement;
         }
 
         finput.close();
@@ -275,11 +275,12 @@ void viewPatients()
 
     else
     {
-        cout << "Name\t\t" << "Age\t\t" << "Date\t\t" << "Location" << endl;
+        cout << "Name\t\t" << "Age\t\t" << "Date\t\t" << "Location\t" << "Symptoms" << endl;
 
         
 
         string name,place,date;
+        string Fever,Tiredness,Headache,Conjunctivitis,Diarrhea,AchesPains,SoreThroat,DryCough,LossTasteSmell,SkinProbs,BreathingProbs,ChestPainPressure,LossSpeechMovement;
         int age;
 
         string ageStr;
@@ -296,15 +297,28 @@ void viewPatients()
             age = stoi(ageStr); //Stoi = casting variable, converting to int
             getline(ss,date,',');
             getline(ss,place,',');
+            getline(ss,Fever,',');
+            getline(ss,Tiredness,',');
+            getline(ss,Headache,',');
+            getline(ss,Conjunctivitis,',');
+            getline(ss,Diarrhea,',');
+            getline(ss,AchesPains,',');
+            getline(ss,SoreThroat,',');
+            getline(ss,DryCough,',');
+            getline(ss,LossTasteSmell,',');
+            getline(ss,SkinProbs,',');
+            getline(ss,BreathingProbs,',');
+            getline(ss,ChestPainPressure,',');
+            getline(ss,LossSpeechMovement,',');
 
             if(name.length() < 8 ) //for neater CLI
             {
-                cout << name << "\t\t" << age << "\t\t" << date << "\t" << place << "\n"; 
+                cout << "\n" << name << "\t\t" << age << "\t\t" << date << "\t" << place << "\t\t" << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "," << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "," << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement << "\n"; 
             }
 
             else
             {
-                cout << name << "\t" << age << "\t\t" << date << "\t" << place << "\n"; 
+                cout << "\n" << name << "\t" << age << "\t\t" << date << "\t" << place << "\t\t" << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "," << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "," << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement << "\n";
             }
             
 
@@ -365,7 +379,12 @@ bool compare(string a, string b) // compare fuction to sort array of dates
     return false;
 }
 
-
+void swap(Patients *xp, Patients *yp)
+{
+    Patients temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
 
 void printDates(vector<string> dates, int n) 
 { 
@@ -434,16 +453,120 @@ void ageSort()
 {
 
     vector<Patients> patients;
-    string lines;
+    string lines,name,ageStr,date,place;
+    string Fever,Tiredness,Headache,Conjunctivitis,Diarrhea,AchesPains,SoreThroat,DryCough,LossTasteSmell,SkinProbs,BreathingProbs,ChestPainPressure,LossSpeechMovement;
+    int age;
+
     int numOfLines = 0;
     ifstream datafile("data.txt");
 
+
+    //grabbing data from file, creating an object of class Patients and appending to an array
     while (getline(datafile,lines))
     {
+        stringstream ss(lines);
+
+        getline(ss,name,',');
+        getline(ss,ageStr,','); //age stored into string
+        age = stoi(ageStr); //Stoi = casting variable, converting to int
+        getline(ss,date,',');
+        getline(ss,place,',');
+        getline(ss,Fever,',');
+        getline(ss,Tiredness,',');
+        getline(ss,Headache,',');
+        getline(ss,Conjunctivitis,',');
+        getline(ss,Diarrhea,',');
+        getline(ss,AchesPains,',');
+        getline(ss,SoreThroat,',');
+        getline(ss,DryCough,',');
+        getline(ss,LossTasteSmell,',');
+        getline(ss,SkinProbs,',');
+        getline(ss,BreathingProbs,',');
+        getline(ss,ChestPainPressure,',');
+        getline(ss,LossSpeechMovement,',');
+
+
+
+        Patients temp("0",0,"0","0","0","0","0","0","0","0","0","0","0","0","0","0","0");
+        temp.setName(name);
+        temp.setAge(age);
+        temp.setDate(date);
+        temp.setLocation(place);
+        temp.setFever(Fever);
+        temp.setTiredness(Tiredness);
+        temp.setHeadache(Headache);
+        temp.setConjunctivitis(Conjunctivitis);
+        temp.setDiarrhea(Diarrhea);
+        temp.setAchesPains(AchesPains);
+        temp.setSoreThroat(SoreThroat);
+        temp.setDryCough(DryCough);
+        temp.setLossTasteSmell(LossTasteSmell);
+        temp.setSkinProbs(SkinProbs);
+        temp.setBreathingProbs(BreathingProbs);
+        temp.setChestPainPressure(ChestPainPressure);
+        temp.setLossSpeechMovement(LossSpeechMovement);
+        
+        patients.push_back(temp);
+
         numOfLines++;
+
     }
 
-    cout << numOfLines << endl;
+
+    int i,j;
+    //bubble sort
+    bool swapped = false;
+
+    for(int i = 0; i < numOfLines; i++)
+    {
+        swapped = false;
+        for(int j = 0; j < numOfLines-1; j++)
+        {
+            if(patients[j].getAge() > patients[j+1].getAge())
+            {
+                
+                swap(&patients[j],&patients[j+1]);
+                swapped = true;           
+            }
+        }
+        if(swapped == false)
+        {
+            break;
+        }
+        
+    }
+
+    //printing 
+    cout << "Name\t\t" << "Age\t\t" << "Date\t\t" << "Location\t" << "Symptoms" << endl;
+    for(int i = 0; i < numOfLines; i++)
+    {
+        if(name.length() < 8 ) //for neater CLI
+        {
+            if(place.length() < 8)
+            {
+                cout << patients[i].getName() << "\t\t" << patients[i].getAge() << "\t\t" << patients[i].getDate() << "\t" << patients[i].getLocation() << "\t\t" << patients[i].getFever() << "," << patients[i].getTiredness() << "," << patients[i].getHeadache() << "," << patients[i].getConjunctivitis() << "," << patients[i].getDiarrhea() << "," << patients[i].getAchesPains() << "," << patients[i].getSoreThroat() << "," << patients[i].getDryCough() << "," << patients[i].getLossTasteSmell() << "," << patients[i].getSkinProbs() << "," << patients[i].getBreathingProbs() << "," << patients[i].getChestPainPressure() << "," << patients[i].getLossSpeechMovement() << "\n"; 
+            }
+
+            else
+            {
+                cout << patients[i].getName() << "\t\t" << patients[i].getAge() << "\t\t" << patients[i].getDate() << "\t" << patients[i].getLocation() << "\t" << patients[i].getFever() << "," << patients[i].getTiredness() << "," << patients[i].getHeadache() << "," << patients[i].getConjunctivitis() << "," << patients[i].getDiarrhea() << "," << patients[i].getAchesPains() << "," << patients[i].getSoreThroat() << "," << patients[i].getDryCough() << "," << patients[i].getLossTasteSmell() << "," << patients[i].getSkinProbs() << "," << patients[i].getBreathingProbs() << "," << patients[i].getChestPainPressure() << "," << patients[i].getLossSpeechMovement() << "\n"; 
+            }
+            
+        }
+
+        else
+        {
+            if(place.length() < 8)
+            {
+                cout << patients[i].getName() << "\t\t" << patients[i].getAge() << "\t\t" << patients[i].getDate() << "\t" << patients[i].getLocation() << "\t\t" << patients[i].getFever() << "," << patients[i].getTiredness() << "," << patients[i].getHeadache() << "," << patients[i].getConjunctivitis() << "," << patients[i].getDiarrhea() << "," << patients[i].getAchesPains() << "," << patients[i].getSoreThroat() << "," << patients[i].getDryCough() << "," << patients[i].getLossTasteSmell() << "," << patients[i].getSkinProbs() << "," << patients[i].getBreathingProbs() << "," << patients[i].getChestPainPressure() << "," << patients[i].getLossSpeechMovement() << "\n"; 
+            }
+
+            else
+            {
+                cout << patients[i].getName() << "\t\t" << patients[i].getAge() << "\t\t" << patients[i].getDate() << "\t" << patients[i].getLocation() << "\t" << patients[i].getFever() << "," << patients[i].getTiredness() << "," << patients[i].getHeadache() << "," << patients[i].getConjunctivitis() << "," << patients[i].getDiarrhea() << "," << patients[i].getAchesPains() << "," << patients[i].getSoreThroat() << "," << patients[i].getDryCough() << "," << patients[i].getLossTasteSmell() << "," << patients[i].getSkinProbs() << "," << patients[i].getBreathingProbs() << "," << patients[i].getChestPainPressure() << "," << patients[i].getLossSpeechMovement() << "\n"; 
+            }
+        }
+    }
 
 }
 
@@ -478,6 +601,9 @@ void selectSort()
             }
 
         case 4:
+            {
+                break;
+            }
         case 5:
             {
                 break;
