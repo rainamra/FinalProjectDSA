@@ -82,6 +82,7 @@ int main()
                     cin >> location;
 
                     cout << "Symptoms Check: ";
+                    // 3 points
                     cout << "Fever (Y/N): ";
                     cin >> fever;
                     cout << "Tiredness (Y/N): ";
@@ -94,6 +95,7 @@ int main()
                     cin >> diarrhea;
                     cout << "Aches and Pains (Y/N): ";
                     cin >> achesPains;
+                    // 5 points
                     cout << "Sore Throat (Y/N): ";
                     cin >> soreThroat;
                     cout << "Dry Cough (Y/N): ";
@@ -102,6 +104,7 @@ int main()
                     cin >> lossTasteSmell;
                     cout << "Rash on Skin or Discolouration of Fingers or Toes (Y/N): ";
                     cin >> skinProbs;
+                    // 10 points
                     cout << "Difficulty Breathing or Shortness of Breath (Y/N): ";
                     cin >> breathingProbs;
                     cout << "Chest Pain or Pressure (Y/N): ";
