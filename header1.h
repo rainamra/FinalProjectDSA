@@ -238,7 +238,7 @@ void addPatients(string name,int age, string date, string location, string Fever
 
         if(finput.is_open())
         {
-            foutput << name << "," << age << "," << date << "," << location << "," << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "," << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "," << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement;
+            foutput << name << "," << age << "," << date << "," << location << "," << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "&" << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "$" << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement;
         }
 
         finput.close();
@@ -253,7 +253,7 @@ void addPatients(string name,int age, string date, string location, string Fever
 
         if(finput.is_open())
         {
-            foutput << "\n" << name << "," << age << "," << date << "," << location << "," << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "," << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "," << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement;
+            foutput << "\n" << name << "," << age << "," << date << "," << location << "," << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "&" << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "$" << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement;
         }
 
         finput.close();
