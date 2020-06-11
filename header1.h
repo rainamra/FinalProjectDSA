@@ -262,6 +262,16 @@ void addPatients(string name,int age, string date, string location, string Fever
     
 }
 
+void calculateSymptoms()
+{
+    //3 Points
+    
+    //5 Points
+    
+    //10 Points
+}
+
+
 void viewPatients()
 {
     ifstream datafile("data.txt");
