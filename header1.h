@@ -262,14 +262,54 @@ void addPatients(string name,int age, string date, string location, string Fever
     
 }
 
-void calculateSymptoms()
+//kalo pake ini ntar pemisah addPatients nya space aja khusus bagian symptoms
+//symptomsnya kyknya ilangin aja di viewPatients di ganti status kalo ini udh jadi
+int calculateSymptoms()
 {
-    //3 Points
+    ifstream datafile("data.txt");
     
-    //5 Points
+    string Fever, SoreThroat, BreathingProbs;
     
-    //10 Points
+    string line;
+    
+    int total = 0;
+    
+    while(getline(datafile,line))
+    {
+        stringstream ss(line); //Used for breaking words
+        
+        // 3 points
+        int low = 0;
+        getline(ss,Fever,'&');
+        while (ss >> line)
+        {
+            if (line=="Y")
+                low++;
+        }
+        return low;
+        
+        total += low;
+        
+        
+        // 5 points
+        int med = 0;
+        getline(ss,SoreThroat, '$');
+        while (ss >> line)
+        {
+            if (line=="Y")
+                med++;
+        }
+        return med;
+        
+        total += med;
+        
+        //getline(ss,BreathingProbs,'');
+    
+    }
+    datafile.close();
+    return total;
 }
+
 
 
 void viewPatients()
