@@ -75,7 +75,7 @@ int main()
                     cout << "Enter Patient Age: ";
                     cin >> patientAge;
 
-                    cout << "Enter date (dd/mm/yyy): ";
+                    cout << "Enter date (dd/mm/yyyy): ";
                     cin >> date;
 
                     cout << "Enter Location: ";
@@ -112,6 +112,7 @@ int main()
                     cout << "Loss of Speech or Movement (Y/N): ";
                     cin >> lossSpeechMovement;
                     
+                    
   
 
                     addPatients(patientName,patientAge,date,location, fever, tiredness, headache, conjunctivitis, diarrhea, achesPains, soreThroat, dryCough, 
@@ -127,7 +128,6 @@ int main()
             case 3:
                 {
                     viewPatients();
-                    selectSort();
                     break;
                     
                     

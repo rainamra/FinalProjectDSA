@@ -1,6 +1,3 @@
-Cen,18,02/04/2020,Kemang,N,N,Y,N,N,N,Y,Y,N,N,Y,N,N
-Ali,19,01/01/2020,Bintaro,N,N,N,N,N,N,Y,Y,Y,Y,Y,Y,Y
-Rain,20,02/02/2020,Rawa,N,N,Y,Y,Y,Y,N,N,N,N,Y,N,Y
-Aze,15,19/05/20,Rawa,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,N,N
-Child,10,01/02/20,Crib,N,N,N,N,N,N,N,N,N,N,N,N,N
-Baby,5,10/10/20,Playgor,N,N,N,N,N,N,N,N,N,N,N,Y,N
+Ali,19,01/01/2010,Bintar%Y,Y,Y,N,N,Y&N,N,N,N$N,N,Y
+Cen,17,02/04/2002,Kemangs%N,N,N,N,N,N&N,N,N,N$N,N,N
+Baby,3,06/06/2006,Himalay%Y,Y,Y,Y,Y,Y&Y,Y,Y,Y$Y,Y,Y

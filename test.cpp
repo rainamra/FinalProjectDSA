@@ -10,41 +10,15 @@ bool compare(string a, string b) // compare fuction to sort array of dates
     //compare year
     string str1 = a.substr(6,4);
     string str2 = b.substr(6,4);
-    if(str1.compare(str2) != 0)
-    {
-        if(str1.compare(str2) < 0)
-        {
-            return true;
-        }
-        return false;
-    }
 
     //compare month
     string month_a = a.substr(3,2);
     string month_b = b.substr(3,2);
 
-    if(month_a.compare(month_b) != 0)
-    {   
-        if(month_a.compare(month_b) < 0)
-        {
-            return true;
-        }
-        return false;
-        
-    }
-    
-    
-    
-
     //compare day
     string day_a = a.substr(0,2);
     string day_b = b.substr(0,2);
 
-    if(day_a.compare(day_b) < 0)
-    {
-        return true;
-    }
-    return false;
 }
 
 void printDates(vector<string> dates, int n) 
@@ -68,9 +42,22 @@ int main()
 
     int m = date.size();
 
-    sort(date.begin() , date.end(), compare);
+    // sort(date.begin() , date.end(), compare);
 
-    printDates(date , m);
+    // printDates(date , m);
 
+    printDates(date,m-1);
+    
+    int year1;
+    year1 = stoi(date[0].substr(6,4));
+    cout << year1 << endl;
+
+    // for(int i = 0; i < m;i++)
+    // {
+    //     for(int j = i+1;j<m;j++)
+    //     {
+    //         if()
+    //     }
+    // }
 
 }
