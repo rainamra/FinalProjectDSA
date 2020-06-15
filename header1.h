@@ -826,88 +826,101 @@ void addPatients(string name,int age, string date, string location, string Fever
 }
 
 
-//kalo pake ini ntar pemisah addPatients nya space aja khusus bagian symptoms
-//symptomsnya kyknya ilangin aja di viewPatients di ganti status kalo ini udh jadi
-/*int calculateSymptoms()
-{
-    ifstream datafile("data.txt");
-    
-    string Fever, SoreThroat, BreathingProbs;
-    
-    string line;
-    
-    int total = 0;
-    
-    while(getline(datafile,line))
-    {
-        stringstream ss(line); //Used for breaking words
-
-        //Note: Na, jadi gw tambahin symbol sesudah lokasi ya, jadi nama umur date lokasi gw taro satu variable temp, sisanya symptoms
-        string temp;
-        
-        //gtau ini perlu ato gak kalo gak perlu apus aja gak ngerti gw -cen
-
-        // getline(ss,temp,'%') // semua yg bukan symptoms masuk ke variable temp
-        
-        // 3 points
-        int low = 0;
-        getline(ss,Fever,'&');
-        while (ss >> line)
-        {
-            if (line=="Y")
-                low += 3;
-        }
-        return low;
-        
-        total += low;
-        
-        
-        // 5 points
-        int med = 0;
-        getline(ss,SoreThroat, '$');
-        while (ss >> line)
-        {
-            if (line=="Y")
-                med += 5;
-        }
-        return med;
-        
-        total += med;
-        
-        //getline(ss,BreathingProbs,'');
-    
-    }
-    datafile.close();
-    return total;
-}*/
-
 int calculateSymptoms()
 {
     ifstream datafile("data.txt");
     
     string temp, low, med, high;
     
-    string line, words;
+    string line, status;
     
-    //int total = 0;
     int total = 0;
+    int lowPoints = 0;
+    int medPoints = 0;
+    int highPoints = 0;
+    
     
     while(getline(datafile,line))
     {
-        stringstream ss(line); //Used for breaking words
+        lowPoints = 0;
+        medPoints = 0;
+        highPoints = 0;
+        total = 0;
+        status = "green";
         
-        getline(ss, temp, '%'); // temporary storing yg bukan symptoms
+        stringstream s(line); //Used for breaking words
         
-        // symptoms 3 points
-        getline(ss,low,'&');
-        while (ss >> line)
+        // temporary storing yg bukan symptoms
+        getline(s, temp, '%');
+        cout<< temp << endl;
+        
+        // symptoms 3 points string
+        getline(s,low,'&');
+        cout << low << endl;
+        
+        //symptoms 5 points string
+        getline(s, med, '$');
+        cout << med << endl;
+        
+        getline(s, high, ',');
+        cout << high << endl;
+        
+        //calculate Y in low string
+        stringstream ss (low);
+        while (ss >> low)
         {
-            if (line == "Y")
-                total++;
+            if (low == "Y")
+                lowPoints+=3;
         }
+        cout << "Low Points: " << lowPoints << endl;
+        total += lowPoints;
+
+        //calculate Y in med string
+        stringstream sss(med);
+        while (sss >> med)
+        {
+            if (med == "Y")
+                medPoints+=5;
+        }
+        cout << "Med Points: " << medPoints << endl;
+        total += medPoints;
+        
+        //calculate Y in high string
+        stringstream ssss(high);
+        while (ssss >> high)
+        {
+            if (high == "Y")
+                highPoints+=10;
+        }
+        cout << "High Points: " << highPoints << endl;
+        total += highPoints;
+        
+        //print the accumulated points
+        cout << "Total Points: " << total << endl;
+        
+        //patients status based on their symptoms (green, yellow, orange, red)
+        if (total <= 18 & medPoints == 0)
+        {
+            status = "green";
+        }
+        else if (total >= 18 & medPoints != 0 )
+        {
+            status = "yellow";
+        }
+        else if (total >= 18 & medPoints >= 10 )
+        {
+            status = "orange";
+        }
+        else if (total >= 18 & highPoints != 0 )
+        {
+            status = "red";
+        }
+        
+        cout << "Patient Status: " << status << endl;
+        
     }
     datafile.close();
-    return total*3;
+    return 0;
 }
 
 
