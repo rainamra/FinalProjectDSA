@@ -801,7 +801,7 @@ void addPatients(string name,int age, string date, string location, string Fever
 
         if(finput.is_open())
         {
-            foutput << name << "," << age << "," << date << "," << location << "%" << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "&" << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "$" << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement;
+            foutput << name << "," << age << "," << date << "," << location << "% " << Fever << " " << Tiredness << " " << Headache << " " << Conjunctivitis << " " << Diarrhea << " " << AchesPains << " & " << SoreThroat << " " << DryCough << " " << LossTasteSmell << " " << SkinProbs << " $ " << BreathingProbs << " " << ChestPainPressure << " " << LossSpeechMovement;
         }
 
         finput.close();
@@ -816,7 +816,7 @@ void addPatients(string name,int age, string date, string location, string Fever
 
         if(finput.is_open())
         {
-            foutput << "\n" << name << "," << age << "," << date << "," << location << "%" << Fever << "," << Tiredness << "," << Headache << "," << Conjunctivitis << "," << Diarrhea << "," << AchesPains << "&" << SoreThroat << "," << DryCough << "," << LossTasteSmell << "," << SkinProbs << "$" << BreathingProbs << "," << ChestPainPressure << "," << LossSpeechMovement;
+            foutput << "\n" << name << "," << age << "," << date << "," << location << "% " << Fever << " " << Tiredness << " " << Headache << " " << Conjunctivitis << " " << Diarrhea << " " << AchesPains << " & " << SoreThroat << " " << DryCough << " " << LossTasteSmell << " " << SkinProbs << " $ " << BreathingProbs << " " << ChestPainPressure << " " << LossSpeechMovement;
         }
 
         finput.close();
@@ -828,7 +828,7 @@ void addPatients(string name,int age, string date, string location, string Fever
 
 //kalo pake ini ntar pemisah addPatients nya space aja khusus bagian symptoms
 //symptomsnya kyknya ilangin aja di viewPatients di ganti status kalo ini udh jadi
-int calculateSymptoms()
+/*int calculateSymptoms()
 {
     ifstream datafile("data.txt");
     
@@ -879,6 +879,35 @@ int calculateSymptoms()
     }
     datafile.close();
     return total;
+}*/
+
+int calculateSymptoms()
+{
+    ifstream datafile("data.txt");
+    
+    string temp, low, med, high;
+    
+    string line, words;
+    
+    //int total = 0;
+    int total = 0;
+    
+    while(getline(datafile,line))
+    {
+        stringstream ss(line); //Used for breaking words
+        
+        getline(ss, temp, '%'); // temporary storing yg bukan symptoms
+        
+        // symptoms 3 points
+        getline(ss,low,'&');
+        while (ss >> line)
+        {
+            if (line == "Y")
+                total++;
+        }
+    }
+    datafile.close();
+    return total*3;
 }
 
 
