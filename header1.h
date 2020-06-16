@@ -1192,15 +1192,15 @@ string calculateStatus(int low, int med, int high)
     int total = low + med + high;
     string status;
 
-    if (total <= 18 & med == 0)
+    if (total <= 18 & med == 0 & high == 0)
     {
         status = "green";
     }
-    else if (total >= 18 & med != 0 )
+    else if (total >= 18 & med == 5 & high == 0 )
     {
         status = "yellow";
     }
-    else if (total >= 18 & med >= 10 )
+    else if (total >= 18 & med >= 10 & high == 0 )
     {
         status = "orange";
     }
