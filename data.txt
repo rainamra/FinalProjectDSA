@@ -1,3 +1,1 @@
-Ali,19,01/01/2010,Bintar%Y,Y,Y,N,N,Y&N,N,N,N$N,N,Y
-Cen,17,02/04/2002,Kemangs%N,N,N,N,N,N&N,N,N,N$N,N,N
-Baby,3,06/06/2006,Himalay%Y,Y,Y,Y,Y,Y&Y,Y,Y,Y$Y,Y,Y
+Cen,17,02/04/2002,Kemang%N N N N N Y&Y Y Y Y$Y N Y 43 yellow

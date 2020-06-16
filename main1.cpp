@@ -35,12 +35,7 @@ CLI PLAN:
 
 int main()
 {
-    //Create object patient for all patients in file when loaded
-    vector<Patients> patients;
-    ifstream datafile("data.txt");
-    int i = 0;
-
-
+    //MENU
     bool start = true;
     while(start)
     {
@@ -59,11 +54,12 @@ int main()
         cout << "----------------------" << endl;
 
 
-        switch(selection)
+        switch(selection) //SWITCH CASE FOR MENU SELECTION
         {
             case 1:
                 {
-                    string patientName,location,date;
+                    string patientName,location,date,status;
+                    int low,med,high,severity;
                     string fever, tiredness, headache, conjunctivitis, diarrhea, achesPains, soreThroat, dryCough, 
                     lossTasteSmell, skinProbs, breathingProbs, chestPainPressure, lossSpeechMovement;
                     int patientAge;
@@ -112,29 +108,43 @@ int main()
                     cout << "Loss of Speech or Movement (Y/N): ";
                     cin >> lossSpeechMovement;
                     
+                    //CALCULATING SEVERITY POINTS & STATUS
+                    low = calculateLowSymptoms(fever,tiredness,headache,conjunctivitis,diarrhea,achesPains);
+                    med = calculateMedSymptoms(soreThroat,dryCough,lossTasteSmell,skinProbs);
+                    high = calculateHighSymptoms(breathingProbs,chestPainPressure,lossSpeechMovement);
+                    severity = low + med + high;
+                    status = calculateStatus(low,med,high);
                     
   
-
+                    //ADD
                     addPatients(patientName,patientAge,date,location, fever, tiredness, headache, conjunctivitis, diarrhea, achesPains, soreThroat, dryCough, 
-                    lossTasteSmell, skinProbs, breathingProbs, chestPainPressure, lossSpeechMovement);
+                    lossTasteSmell, skinProbs, breathingProbs, chestPainPressure, lossSpeechMovement,severity,status);
                     break;
                 }
 
             case 2:
                 {
+                    //REMOVE
+                    string deleteline;
 
+                    cout << "Who do you want to remove : ";
+                    cin >> deleteline;
+
+                    removePatients(deleteline);
+                    break;
 
                 }
             case 3:
                 {
+                    //view patients
                     viewPatients();
                     break;
-                    
                     
                 }
 
             case 4:
                 {
+                    //end of loop
                     start = false;
                     break;
                 }
