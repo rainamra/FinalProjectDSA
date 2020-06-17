@@ -2,7 +2,7 @@ DATA STRUCTURE ALGORITHM FINAL PROJECT
 -----------------------------------------------------
 - Radisa Hussein Rachmadi - 2301891752
 
-- Rainamira Azzahra - 
+- Rainamira Azzahra - 2301900391
 
 - Rayhan Ali Darmawan -
 -----------------------------------------------------
