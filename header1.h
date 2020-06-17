@@ -1190,8 +1190,9 @@ int calculateHighSymptoms(string breathingprobs, string chestpainpressure, strin
 string calculateStatus(int low, int med, int high)
 {
     int total = low + med + high;
-    string status;
+    string status = "green";
 
+    
     if (total <= 18 & med == 0 & high == 0)
     {
         status = "green";

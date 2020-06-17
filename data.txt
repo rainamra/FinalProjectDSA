@@ -1,1 +1,5 @@
-Cen,17,02/04/2002,Kemang%N N N N N Y&Y Y Y Y$Y N Y 43 yellow
+Cen,17,02/04/2020,Kemang%N N N Y N Y&Y N Y Y$N N N 21 orange
+Ali,18,01/01/2021,Bintaro%Y Y Y Y Y N&N N N N$N N N 15 green
+Raina,20,06/09/2019,Rawamangun%N N N N N Y&Y N Y N$Y Y Y 43 red
+Kira,14,19/04/2018,Jakarta%Y Y N N N N&N N N N$N N N 6 green
+Rafa,14,06/06/2020,FX%Y Y Y N N N&N N N N$N N N 9 green
