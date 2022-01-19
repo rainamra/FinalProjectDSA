@@ -4,7 +4,7 @@ DATA STRUCTURE ALGORITHM FINAL PROJECT
 
 - Rainamira Azzahra - 2301900391
 
-- Rayhan Ali Darmawan -
+- Rayhan Ali Darmawan - 2301891683
 -----------------------------------------------------
 
 Create a system to store Covid-19 Patients for better efficient analyzing
